@@ -111,16 +111,16 @@
 		94B287E71ED5300B00695407 /* cookingCompanion */ = {
 			isa = PBXGroup;
 			children = (
-				94B287E81ED5300B00695407 /* AppDelegate.swift */,
 				94B287EC1ED5300B00695407 /* Main.storyboard */,
-				9479A9CD1ED54F3700AEDF47 /* RecipeProcedureVC.swift */,
-				9479A9D91ED56D9D00AEDF47 /* RecipeProcedureFooterView.swift */,
-				9479A9D51ED5580E00AEDF47 /* RecipeProcedureStepCell.swift */,
 				94B288161ED5469700695407 /* RecipeOverviewVC.swift */,
 				94B2881A1ED548CC00695407 /* RecipeOverviewCell.swift */,
 				94B288181ED547E500695407 /* RecipeDetailVC.swift */,
 				9479A9D31ED551B800AEDF47 /* IngredientCell.swift */,
+				9479A9CD1ED54F3700AEDF47 /* RecipeProcedureVC.swift */,
+				9479A9D51ED5580E00AEDF47 /* RecipeProcedureStepCell.swift */,
+				9479A9D91ED56D9D00AEDF47 /* RecipeProcedureFooterView.swift */,
 				9479A9D71ED55D0400AEDF47 /* String+ValidCommands.swift */,
+				94B287E81ED5300B00695407 /* AppDelegate.swift */,
 				94B287EF1ED5300B00695407 /* Assets.xcassets */,
 				94B287F11ED5300B00695407 /* LaunchScreen.storyboard */,
 				94B287F41ED5300B00695407 /* Info.plist */,

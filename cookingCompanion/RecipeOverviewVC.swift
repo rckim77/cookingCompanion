@@ -35,7 +35,7 @@ extension RecipeOverviewVC: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recipeOverviewCell", for: indexPath) as! RecipeOverviewCell
         
-        cell.recipeNameLabel.text = "Butter-basted Steak"
+        cell.recipeNameLabel.text = "Char Siu Pork"
         
         return cell
     }

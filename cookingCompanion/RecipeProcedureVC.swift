@@ -12,6 +12,7 @@ import Speech
 class RecipeProcedureVC: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var collectionViewFlowLayout: UICollectionViewFlowLayout!
     @IBAction func closeBtnPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -28,7 +29,7 @@ class RecipeProcedureVC: UIViewController {
     // manage, cancel, or stop current recognition task
     var recognitionTask: SFSpeechRecognitionTask?
     
-    let numberOfSteps: Int = 9
+    let numberOfSteps: Int = 7
     var utterance: String?
     var utteranceSegments = [SFTranscriptionSegment]()
     
@@ -36,6 +37,9 @@ class RecipeProcedureVC: UIViewController {
         super.viewDidLoad()
         
         recordAndRecognizeSpeech()
+        
+        let margin: CGFloat = 4
+        collectionViewFlowLayout.estimatedItemSize = CGSize(width: collectionView.bounds.width - collectionView.contentInset.left - collectionView.contentInset.right - margin, height: 400)
     }
     
     func recordAndRecognizeSpeech() {
@@ -130,7 +134,41 @@ extension RecipeProcedureVC: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recipeProcedureCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recipeProcedureCell", for: indexPath) as! RecipeProcedureStepCell
+        
+        switch indexPath.row {
+        case 0:
+            cell.directionsLabel.text = "1. Heat sous vide to 140F (or 60C) in a container of water."
+            cell.descriptionLabel.text = ""
+            cell.imageView.image = #imageLiteral(resourceName: "charsiuporksousvide")
+        case 1:
+            cell.directionsLabel.text = "2. Slice pork into steaks"
+            cell.descriptionLabel.text = "Slice pork shoulder into steaks about 1.5\" (38mm) thick."
+            cell.imageView.isHidden = true
+        case 2:
+            cell.directionsLabel.text = "3. Season pork"
+            cell.descriptionLabel.text = "Season pork with salt and let rest, allowing salt to dissolve into meat for 20 to 30 minutes."
+            cell.imageView.image = #imageLiteral(resourceName: "charsiuporksalt")
+        case 3:
+            cell.directionsLabel.text = "4. Bag it up"
+            cell.descriptionLabel.text = "Fill sous vide bag with sauce, then add meat. You can cook meat right away or store in the fridge for up to 24 hours."
+            cell.imageView.image = #imageLiteral(resourceName: "charsiuporkbag")
+        case 4:
+            cell.directionsLabel.text = "5. Cook for 8 hours"
+            cell.descriptionLabel.text = "Lower the bag into the cooking water and cook for 8 hours."
+            cell.imageView.image = #imageLiteral(resourceName: "charsiuporkbag2")
+        case 5:
+            cell.directionsLabel.text = "6. Finish"
+            cell.descriptionLabel.text = "Sear steaks on each side until they reach a deep mahogany color. Remove right away."
+            cell.imageView.image = #imageLiteral(resourceName: "charsiuporkfinish")
+        case 6:
+            cell.directionsLabel.text = "7. Serve"
+            cell.descriptionLabel.text = "Serve your pork right away–we like to offer it alongside little dipping bowls of mustard, green onions, and sesame seeds."
+            cell.imageView.image = #imageLiteral(resourceName: "charsiupork")
+        default:
+            cell.directionsLabel.text = ""
+            cell.imageView.isHidden = true
+        }
         
         return cell
     }
@@ -145,4 +183,5 @@ extension RecipeProcedureVC: UICollectionViewDelegate, UICollectionViewDataSourc
             assert(false, "Unexpected element kind")
         }
     }
+
 }

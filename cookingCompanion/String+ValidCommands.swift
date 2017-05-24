@@ -11,7 +11,7 @@ import Foundation
 extension String {
     
     func containsValidNextSubstring() -> Bool {
-        return self.contains("Next") || self.contains("next") || self.contains("done") || self.contains("Done")
+        return self.contains("Next") || self.contains("next") || self.contains("text") || self.contains("Text") || self.contains("done") || self.contains("Done")
     }
     
     func containsValidBackSubstring() -> Bool {
