@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9479A9CC1ED54AF000AEDF47 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9479A9CB1ED54AF000AEDF47 /* IngredientCell.swift */; };
+		9479A9CE1ED54F3700AEDF47 /* RecipeProcedureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9479A9CD1ED54F3700AEDF47 /* RecipeProcedureVC.swift */; };
+		9479A9D41ED551B800AEDF47 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9479A9D31ED551B800AEDF47 /* IngredientCell.swift */; };
+		9479A9D61ED5580E00AEDF47 /* RecipeProcedureStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9479A9D51ED5580E00AEDF47 /* RecipeProcedureStepCell.swift */; };
+		9479A9D81ED55D0400AEDF47 /* String+ValidCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9479A9D71ED55D0400AEDF47 /* String+ValidCommands.swift */; };
+		9479A9DA1ED56D9D00AEDF47 /* RecipeProcedureFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9479A9D91ED56D9D00AEDF47 /* RecipeProcedureFooterView.swift */; };
 		94B287E91ED5300B00695407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B287E81ED5300B00695407 /* AppDelegate.swift */; };
 		94B287EE1ED5300B00695407 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B287EC1ED5300B00695407 /* Main.storyboard */; };
 		94B287F01ED5300B00695407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B287EF1ED5300B00695407 /* Assets.xcassets */; };
@@ -37,7 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9479A9CB1ED54AF000AEDF47 /* IngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientCell.swift; path = ../IngredientCell.swift; sourceTree = "<group>"; };
+		9479A9CD1ED54F3700AEDF47 /* RecipeProcedureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeProcedureVC.swift; sourceTree = "<group>"; };
+		9479A9D31ED551B800AEDF47 /* IngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		9479A9D51ED5580E00AEDF47 /* RecipeProcedureStepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeProcedureStepCell.swift; sourceTree = "<group>"; };
+		9479A9D71ED55D0400AEDF47 /* String+ValidCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ValidCommands.swift"; sourceTree = "<group>"; };
+		9479A9D91ED56D9D00AEDF47 /* RecipeProcedureFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeProcedureFooterView.swift; sourceTree = "<group>"; };
 		94B287E51ED5300B00695407 /* cookingCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cookingCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B287E81ED5300B00695407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94B287ED1ED5300B00695407 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,10 +113,14 @@
 			children = (
 				94B287E81ED5300B00695407 /* AppDelegate.swift */,
 				94B287EC1ED5300B00695407 /* Main.storyboard */,
+				9479A9CD1ED54F3700AEDF47 /* RecipeProcedureVC.swift */,
+				9479A9D91ED56D9D00AEDF47 /* RecipeProcedureFooterView.swift */,
+				9479A9D51ED5580E00AEDF47 /* RecipeProcedureStepCell.swift */,
 				94B288161ED5469700695407 /* RecipeOverviewVC.swift */,
 				94B2881A1ED548CC00695407 /* RecipeOverviewCell.swift */,
 				94B288181ED547E500695407 /* RecipeDetailVC.swift */,
-				9479A9CB1ED54AF000AEDF47 /* IngredientCell.swift */,
+				9479A9D31ED551B800AEDF47 /* IngredientCell.swift */,
+				9479A9D71ED55D0400AEDF47 /* String+ValidCommands.swift */,
 				94B287EF1ED5300B00695407 /* Assets.xcassets */,
 				94B287F11ED5300B00695407 /* LaunchScreen.storyboard */,
 				94B287F41ED5300B00695407 /* Info.plist */,
@@ -202,6 +214,7 @@
 				TargetAttributes = {
 					94B287E41ED5300B00695407 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 58D954W93X;
 						ProvisioningStyle = Automatic;
 					};
 					94B287F81ED5300B00695407 = {
@@ -269,10 +282,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				94B288171ED5469700695407 /* RecipeOverviewVC.swift in Sources */,
-				9479A9CC1ED54AF000AEDF47 /* IngredientCell.swift in Sources */,
+				9479A9D81ED55D0400AEDF47 /* String+ValidCommands.swift in Sources */,
+				9479A9D61ED5580E00AEDF47 /* RecipeProcedureStepCell.swift in Sources */,
+				9479A9CE1ED54F3700AEDF47 /* RecipeProcedureVC.swift in Sources */,
+				9479A9D41ED551B800AEDF47 /* IngredientCell.swift in Sources */,
 				94B287E91ED5300B00695407 /* AppDelegate.swift in Sources */,
 				94B2881B1ED548CC00695407 /* RecipeOverviewCell.swift in Sources */,
 				94B288191ED547E500695407 /* RecipeDetailVC.swift in Sources */,
+				9479A9DA1ED56D9D00AEDF47 /* RecipeProcedureFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +443,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 58D954W93X;
 				INFOPLIST_FILE = cookingCompanion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.cookingCompanion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -438,7 +457,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 58D954W93X;
 				INFOPLIST_FILE = cookingCompanion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.cookingCompanion;
 				PRODUCT_NAME = "$(TARGET_NAME)";

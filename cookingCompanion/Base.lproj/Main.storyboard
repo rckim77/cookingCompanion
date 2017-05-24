@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TL1-U4-icm">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TL1-U4-icm">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="arz-5b-Qbf">
@@ -100,7 +100,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZD-cB-7zS">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZD-cB-7zS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3D-Qy-Zeo">
@@ -161,7 +161,7 @@
                                                             <constraint firstItem="e6f-tt-KtF" firstAttribute="leading" secondItem="W8B-0Q-fk9" secondAttribute="leadingMargin" constant="8" id="hUH-pk-ZGZ"/>
                                                         </constraints>
                                                         <connections>
-                                                            <outlet property="ingredientLabel" destination="e6f-tt-KtF" id="cpH-tR-dve"/>
+                                                            <outlet property="ingredientLabel" destination="e6f-tt-KtF" id="Xib-Zp-AwG"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -175,7 +175,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="KOx-uS-QPw"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <state key="normal" title="START"/>
                                                 <connections>
                                                     <action selector="startPressed:" destination="XIm-Ul-QpL" eventType="touchUpInside" id="59E-ru-9vF"/>
@@ -235,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="1856.8" y="133.13343328335833"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe ProcedureVC-->
         <scene sceneID="4Cc-IK-02h">
             <objects>
-                <viewController id="Na6-5L-lyL" sceneMemberID="viewController">
+                <viewController id="Na6-5L-lyL" customClass="RecipeProcedureVC" customModule="cookingCompanion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lP6-qX-D9q"/>
                         <viewControllerLayoutGuide type="bottom" id="sgI-o6-05F"/>
@@ -246,12 +246,111 @@
                     <view key="view" contentMode="scaleToFill" id="0Qb-Jg-0uJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tnm-Bn-xFS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="knf-0r-Grp">
+                                    <size key="itemSize" width="374" height="395"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="50" height="50"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipeProcedureCell" id="L3b-SK-tqp" customClass="RecipeProcedureStepCell" customModule="cookingCompanion" customModuleProvider="target">
+                                        <rect key="frame" x="0.5" y="0.0" width="374" height="395"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="395"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directions 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XE7-SW-t5K">
+                                                    <rect key="frame" x="32" y="48" width="310" height="97"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="steak" translatesAutoresizingMaskIntoConstraints="NO" id="ZuE-dq-jCc">
+                                                    <rect key="frame" x="0.0" y="185" width="374" height="210"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="210" id="ieB-DC-pdk"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="ZuE-dq-jCc" firstAttribute="leading" secondItem="L3b-SK-tqp" secondAttribute="leading" id="5xJ-39-Vph"/>
+                                            <constraint firstItem="XE7-SW-t5K" firstAttribute="leading" secondItem="L3b-SK-tqp" secondAttribute="leadingMargin" constant="24" id="DSP-ah-rNX"/>
+                                            <constraint firstItem="ZuE-dq-jCc" firstAttribute="top" secondItem="XE7-SW-t5K" secondAttribute="bottom" constant="40" id="Tua-k6-a1R"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZuE-dq-jCc" secondAttribute="bottom" id="VHo-CR-Sdb"/>
+                                            <constraint firstItem="XE7-SW-t5K" firstAttribute="top" secondItem="L3b-SK-tqp" secondAttribute="topMargin" constant="40" id="XiY-WI-C8Z"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZuE-dq-jCc" secondAttribute="trailing" id="bMH-mR-289"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="XE7-SW-t5K" secondAttribute="trailing" constant="24" id="eMz-tk-2Xo"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="directionsLabel" destination="XE7-SW-t5K" id="nP0-ez-pW4"/>
+                                            <outlet property="imageView" destination="ZuE-dq-jCc" id="bRy-Qc-bIY"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipeProcedureFooter" id="jaC-Y6-Xos" customClass="RecipeProcedureFooterView" customModule="cookingCompanion" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="395" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za4-q9-TsE">
+                                            <rect key="frame" x="8" y="8" width="359" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <state key="normal" title="DONE"/>
+                                            <connections>
+                                                <action selector="doneBtnPress:" destination="Na6-5L-lyL" eventType="touchUpInside" id="tfG-Ye-9k4"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="za4-q9-TsE" firstAttribute="leading" secondItem="jaC-Y6-Xos" secondAttribute="leadingMargin" id="0zg-j8-RPT"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="za4-q9-TsE" secondAttribute="trailing" id="KhX-Si-ayl"/>
+                                        <constraint firstItem="za4-q9-TsE" firstAttribute="top" secondItem="jaC-Y6-Xos" secondAttribute="topMargin" id="dtl-ex-kgV"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="za4-q9-TsE" secondAttribute="bottom" id="gC2-Ed-XuA"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="completedBtn" destination="za4-q9-TsE" id="gf3-G6-q9L"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="Na6-5L-lyL" id="UMg-9y-uxP"/>
+                                    <outlet property="delegate" destination="Na6-5L-lyL" id="XBf-Nc-ocJ"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHQ-G8-cdV">
+                                <rect key="frame" x="313" y="36" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="YXT-Nw-ilk"/>
+                                    <constraint firstAttribute="height" constant="30" id="acl-Aq-ZaO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="X"/>
+                                <connections>
+                                    <action selector="closeBtnPressed:" destination="Na6-5L-lyL" eventType="touchUpInside" id="WrG-8A-DDO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tnm-Bn-xFS" secondAttribute="trailing" id="Olo-pn-H2J"/>
+                            <constraint firstItem="sgI-o6-05F" firstAttribute="top" secondItem="tnm-Bn-xFS" secondAttribute="bottom" id="QiU-MJ-5ei"/>
+                            <constraint firstItem="tnm-Bn-xFS" firstAttribute="top" secondItem="0Qb-Jg-0uJ" secondAttribute="top" id="fRV-ie-aic"/>
+                            <constraint firstItem="sHQ-G8-cdV" firstAttribute="top" secondItem="lP6-qX-D9q" secondAttribute="bottom" constant="16" id="g08-3Z-b3Z"/>
+                            <constraint firstItem="tnm-Bn-xFS" firstAttribute="leading" secondItem="0Qb-Jg-0uJ" secondAttribute="leading" id="mQf-mt-aGL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sHQ-G8-cdV" secondAttribute="trailing" constant="16" id="weg-Rr-N3s"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="tnm-Bn-xFS" id="6sh-EU-PQS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JMu-VI-mW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2646" y="137"/>
+            <point key="canvasLocation" x="2645.5999999999999" y="136.28185907046478"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ibk-Id-DSP">
