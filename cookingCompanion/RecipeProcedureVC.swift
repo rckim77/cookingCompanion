@@ -7,120 +7,193 @@
 //
 
 import UIKit
-import Speech
 
-class RecipeProcedureVC: UIViewController {
+class RecipeProcedureVC: UIViewController, OEEventsObserverDelegate {
 
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var collectionViewFlowLayout: UICollectionViewFlowLayout!
+    @IBOutlet var micIcon: UIImageView!
+    @IBOutlet var playPauseBtn: UIButton!
+    
     @IBAction func closeBtnPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func doneBtnPress(_ sender: UIButton) {
+        // TODO: show modal to incentivize taking a picture/video of what you created, share, etc.
         dismiss(animated: true, completion: nil)
     }
     
-    // processes audio stream; gives updates when mic is receiving audio
-    let audioEngine = AVAudioEngine()
-    // can fail to recognize speech; defaults to device's locale
-    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
-    // allocates speech as user speak in real-time and controls buffering
-    let request = SFSpeechAudioBufferRecognitionRequest()
-    // manage, cancel, or stop current recognition task
-    var recognitionTask: SFSpeechRecognitionTask?
+    @IBAction func playBtnPress(_ sender: UIButton) {
+        playPauseToggle = !playPauseToggle
+        
+        if playPauseToggle { // now playing
+            playPauseBtn.setImage(#imageLiteral(resourceName: "Play"), for: .normal)
+            OEPocketsphinxController.sharedInstance().resumeRecognition()
+
+        } else { // now paused
+            playPauseBtn.setImage(#imageLiteral(resourceName: "Pause"), for: .normal)
+            OEPocketsphinxController.sharedInstance().suspendRecognition()
+        }
+    }
     
-    let numberOfSteps: Int = 7
-    var utterance: String?
-    var utteranceSegments = [SFTranscriptionSegment]()
+    
+    var playPauseToggle: Bool = false // false = pause; true = play
+    var openEarsEventsObserver = OEEventsObserver()
+    var numberOfSteps: Int = 7
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        recordAndRecognizeSpeech()
+        micIcon.image = #imageLiteral(resourceName: "SpeechOff")
+        playPauseToggle = false
+        playPauseBtn.contentMode = .scaleAspectFit
+        playPauseBtn.imageView?.image = #imageLiteral(resourceName: "Pause")
         
-        let margin: CGFloat = 4
-        collectionViewFlowLayout.estimatedItemSize = CGSize(width: collectionView.bounds.width - collectionView.contentInset.left - collectionView.contentInset.right - margin, height: 400)
-    }
-    
-    func recordAndRecognizeSpeech() {
-        // nodes process bits of audio
-        // inputNode creates singleton for incoming audio
-        guard let node = audioEngine.inputNode else { return }
+        openEarsEventsObserver.delegate = self
         
-        let recordingFormat = node.outputFormat(forBus: 0)
-        // configures node and sets up request instance with proper buffer on proper bus
-        node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat, block: { buffer, _ in
-            self.request.append(buffer)
-        })
+        let lmGenerator = OELanguageModelGenerator()
+        let words = ["hello", "next", "back", "ok", "previous", "go", "yes", "go back", "next please", "back please", "please", "please go back", "please show me the next step", "next step", "next step please", "play", "resume", "pause", "stop", "top", "go to top", "last", "done", "go to last step"]
+        let name = "languageModelFiles"
+        let err: Error! = lmGenerator.generateLanguageModel(from: words, withFilesNamed: name, forAcousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelEnglish"))
         
-        audioEngine.prepare()
-        do {
-            try audioEngine.start()
-        } catch {
-            return print(error)
-        }
-        
-        guard let myRecognizer = SFSpeechRecognizer() else {
-            // a recognizer isn't supported for current locale
-            return
-        }
-        
-        if !myRecognizer.isAvailable {
-            // a recognizer isn't available right now
-            return
-        }
-        
-        recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
-            if let result = result {
-                let visibleIndexPaths = self.collectionView.indexPathsForVisibleItems
-                // capture the most recent word(s)
-                let mostRecentSegmentsCount = result.bestTranscription.segments.count - self.utteranceSegments.count
-                
-                // check user has said something new in current audio stream
-                if mostRecentSegmentsCount > 0 {
-                    let mostRecentSegments = result.bestTranscription.segments.suffix(from: self.utteranceSegments.count)
-
-                    let mostRecentString = mostRecentSegments.flatMap({ $0.substring }).joined(separator: " ")
-                    
-                    // if there's a valid substring, scroll to next step (until you hit the last step)
-                    if mostRecentString.containsValidNextSubstring() {
-                        let lastVisibleIndexPath = visibleIndexPaths.sorted(by: { $0.row < $1.row }).last!
-                        
-                        if lastVisibleIndexPath.row < self.numberOfSteps - 1 {
-                            let nextCellIndexPath = IndexPath(row: lastVisibleIndexPath.row + 1, section: 0)
-                            self.collectionView.scrollToItem(at: nextCellIndexPath, at: .top, animated: true)
-                        } else {
-                            print("Last step is visible")
-                        }
-                        
-                        print("Result valid substring: \(mostRecentString)")
-                    } else if mostRecentString.containsValidBackSubstring() {
-                        let firstVisibleIndexPath = visibleIndexPaths.sorted(by: { $0.row < $1.row }).first!
-                        
-                        if firstVisibleIndexPath.row > 0 {
-                            let prevCellIndexPath = IndexPath(row: firstVisibleIndexPath.row - 1, section: 0)
-                            self.collectionView.scrollToItem(at: prevCellIndexPath, at: .top, animated: true)
-                        } else {
-                            print("First step is visible")
-                        }
-                    }
-                    
-                    self.utterance = result.bestTranscription.formattedString
-                    self.utteranceSegments = result.bestTranscription.segments
-                    
-                    print("Result String: \(result.bestTranscription.formattedString)")
-                }
-                
-            } else if let error = error {
-                print(error)
+        if (err != nil) {
+            print("Error while creating initial language model: \(err)")
+        } else {
+            let lmPath = lmGenerator.pathToSuccessfullyGeneratedLanguageModel(withRequestedName: name)
+            let dicPath = lmGenerator.pathToSuccessfullyGeneratedDictionary(withRequestedName: name)
+            
+            // OELogging.startOpenEarsLogging() // uncomment to receive full OpenEars logging inc ase of any unexpected results.
+            do {
+                try OEPocketsphinxController.sharedInstance().setActive(true) // Setting the shared OEPocketsphinxController active is necessary before any of its properties are accessed.
+            } catch {
+                print("Error: it wasn't possible to set the shared instance to active: \(error.localizedDescription)")
             }
-        })
+            
+            OEPocketsphinxController.sharedInstance().startListeningWithLanguageModel(atPath: lmPath, dictionaryAtPath: dicPath, acousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelEnglish"), languageModelIsJSGF: false)
+        }
     }
     
+    // MARK: selectors and helper methods
     func completedBtnPress(sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    func nextStepHandler() {
+        let visibleIndexPathsSorted = collectionView.indexPathsForVisibleItems.sorted(by: { $0.row < $1.row })
+        
+        if visibleIndexPathsSorted.last!.row < numberOfSteps - 1 {
+            collectionView.scrollToItem(at: visibleIndexPathsSorted.last!, at: .centeredVertically, animated: true)
+        } else { // scroll to bottom of collection view
+            let lastItemIndexPath = IndexPath(row: numberOfSteps - 1, section: 0)
+            collectionView.scrollToItem(at: lastItemIndexPath, at: .centeredVertically, animated: true)
+        }
+        
+    }
+    
+    func backStepHandler() {
+        let visibleIndexPathsSorted = collectionView.indexPathsForVisibleItems.sorted(by: { $0.row < $1.row })
+        
+        if let firstVisibleIndexPath = visibleIndexPathsSorted.first {
+            collectionView.scrollToItem(at: firstVisibleIndexPath, at: .centeredVertically, animated: true)
+        }
+    }
+    
+    func topStepHandler() {
+        collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+    }
+    
+    func lastStepHandler() {
+        collectionView.scrollToItem(at: IndexPath(row: numberOfSteps - 1, section: 0), at: .top, animated: true)
+    }
+    
+    func pauseHandler() {
+        playPauseToggle = false
+        playPauseBtn.setImage(#imageLiteral(resourceName: "Play"), for: .normal)
+        micIcon.image = #imageLiteral(resourceName: "SpeechOff")
+        
+        OEPocketsphinxController.sharedInstance().suspendRecognition()
+    }
+    
+    func playHandler() {
+        playPauseToggle = true
+        playPauseBtn.setImage(#imageLiteral(resourceName: "Pause"), for: .normal)
+        micIcon.image = #imageLiteral(resourceName: "SpeechOn")
+        
+        OEPocketsphinxController.sharedInstance().resumeRecognition()
+    }
 
+    // MARK: OEEventsObserver delegate methods
+    func pocketsphinxDidReceiveHypothesis(_ hypothesis: String!, recognitionScore: String!, utteranceID: String!) {
+        print("hypothesis: \(hypothesis)")
+        
+        switch hypothesis! {
+        case "next", "go":
+            nextStepHandler()
+        case "back", "back please", "previous", "go back", "go back please":
+            backStepHandler()
+        case "top", "go to top":
+            topStepHandler()
+        case "last", "done", "go to last step":
+            lastStepHandler()
+        case "pause", "stop":
+            pauseHandler()
+        case "play", "resume":
+            playHandler()
+        default:
+            break
+        }
+    }
+    
+    func pocketsphinxDidStartListening() {
+        playHandler()
+        
+        print("pocketsphinx now started listening")
+    }
+    
+    func pocketsphinxDidStopListening() {
+        pauseHandler()
+        
+        print("pocketsphinx has stopped listening")
+    }
+    
+    func pocketsphinxDidSuspendRecognition() {
+        print("pocketsphinx did suspend recognition")
+    }
+    
+    func pocketsphinxDidResumeRecognition() {
+        print("pocketsphinx did resume recognition")
+    }
+    
+    func fliteDidStartSpeaking() {
+        print("flite did start speaking")
+    }
+    
+    func fliteDidFinishSpeaking() {
+        print("flite did finish speaking")
+    }
+    
+    func pocketSphinxContinuousSetupDidFail(withReason reasonForFailure: String!) {
+        print("Local callback: Setting up the continuous recognition loop has failed for the reason \(reasonForFailure), please turn on OELogging.startOpenEarsLogging() to learn more.")
+    }
+    
+    func pocketSphinxContinuousTeardownDidFail(withReason reasonForFailure: String!) {
+        print("Local callback: Tearing down the continuous recognition loop has failed for the reason \(reasonForFailure), please turn on OELogging.startOpenEarsLogging() to learn more.")
+    }
+    
+    func pocketsphinxFailedNoMicPermissions() {
+        // TODO: indicate to user that they've either never set mic permissions or denied permission to this app's mic
+        print("Local callback: The user has never set mic permissions or denied permission to this app's mic, so listening will not start.")
+    }
+    
+    // the user prompt to get mic permissions, or a check of the mic permissions, has completed with a true or false result
+    func micPermissionCheckCompleted(_ result: Bool) {
+        print("Local callback: mic check completed")
+        if result {
+            micIcon.image = #imageLiteral(resourceName: "SpeechOn")
+        }
+    }
+    
 }
 
 extension RecipeProcedureVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -172,16 +245,7 @@ extension RecipeProcedureVC: UICollectionViewDelegate, UICollectionViewDataSourc
         
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionElementKindSectionFooter {
-            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "recipeProcedureFooter", for: indexPath) as! RecipeProcedureFooterView
-            footerView.completedBtn.addTarget(self, action: #selector(completedBtnPress), for: .touchUpInside)
-            
-            return footerView
-        } else {
-            assert(false, "Unexpected element kind")
-        }
-    }
 
 }
+
+
