@@ -53,9 +53,9 @@ class RecipeProcedureVC: UIViewController, OEEventsObserverDelegate {
         openEarsEventsObserver.delegate = self
         
         let lmGenerator = OELanguageModelGenerator()
-        let words = ["hello", "next", "back", "ok", "previous", "go", "yes", "go back", "next please", "back please", "please", "please go back", "please show me the next step", "next step", "next step please", "play", "resume", "pause", "stop", "top", "go to top", "last", "done", "go to last step"]
+        
         let name = "languageModelFiles"
-        let err: Error! = lmGenerator.generateLanguageModel(from: words, withFilesNamed: name, forAcousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelEnglish"))
+        let err: Error! = lmGenerator.generateLanguageModel(from: EnglishLanguageModel.words, withFilesNamed: name, forAcousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelEnglish"))
         
         if (err != nil) {
             print("Error while creating initial language model: \(err)")

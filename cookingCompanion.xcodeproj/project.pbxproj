@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		946092791EF4A51600ED411D /* EnglishLanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946092781EF4A51600ED411D /* EnglishLanguageModel.swift */; };
 		9479A9CE1ED54F3700AEDF47 /* RecipeProcedureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9479A9CD1ED54F3700AEDF47 /* RecipeProcedureVC.swift */; };
 		9479A9D41ED551B800AEDF47 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9479A9D31ED551B800AEDF47 /* IngredientCell.swift */; };
 		9479A9D61ED5580E00AEDF47 /* RecipeProcedureStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9479A9D51ED5580E00AEDF47 /* RecipeProcedureStepCell.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		946092781EF4A51600ED411D /* EnglishLanguageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnglishLanguageModel.swift; sourceTree = "<group>"; };
 		9479A9CD1ED54F3700AEDF47 /* RecipeProcedureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeProcedureVC.swift; sourceTree = "<group>"; };
 		9479A9D31ED551B800AEDF47 /* IngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		9479A9D51ED5580E00AEDF47 /* RecipeProcedureStepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeProcedureStepCell.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				94B288181ED547E500695407 /* RecipeDetailVC.swift */,
 				9479A9D31ED551B800AEDF47 /* IngredientCell.swift */,
 				9479A9CD1ED54F3700AEDF47 /* RecipeProcedureVC.swift */,
+				946092781EF4A51600ED411D /* EnglishLanguageModel.swift */,
 				9479A9D51ED5580E00AEDF47 /* RecipeProcedureStepCell.swift */,
 				9479A9D71ED55D0400AEDF47 /* String+ValidCommands.swift */,
 				94B287E81ED5300B00695407 /* AppDelegate.swift */,
@@ -323,6 +326,7 @@
 				9479A9D41ED551B800AEDF47 /* IngredientCell.swift in Sources */,
 				94B287E91ED5300B00695407 /* AppDelegate.swift in Sources */,
 				94B2881B1ED548CC00695407 /* RecipeOverviewCell.swift in Sources */,
+				946092791EF4A51600ED411D /* EnglishLanguageModel.swift in Sources */,
 				94B288191ED547E500695407 /* RecipeDetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
