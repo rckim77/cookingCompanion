@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Yha-0Q-8a2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yha-0Q-8a2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cooking Companion-->
+        <!--Recipes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RecipeOverviewVC" customModule="cookingCompanion" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +43,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zht-Da-9bU">
-                                                    <rect key="frame" x="256" y="56" width="95" height="19.5"/>
+                                                    <rect key="frame" x="256" y="56" width="103" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -76,13 +73,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="TL1-U4-icm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OJb-7x-b1E"/>
-                            <constraint firstAttribute="trailing" secondItem="TL1-U4-icm" secondAttribute="trailing" id="XAT-js-CI5"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TL1-U4-icm" secondAttribute="bottom" id="nFi-6m-KIa"/>
+                            <constraint firstItem="TL1-U4-icm" firstAttribute="leading" secondItem="uDE-4k-z3b" secondAttribute="leading" id="OJb-7x-b1E"/>
+                            <constraint firstItem="uDE-4k-z3b" firstAttribute="trailing" secondItem="TL1-U4-icm" secondAttribute="trailing" id="XAT-js-CI5"/>
+                            <constraint firstItem="uDE-4k-z3b" firstAttribute="bottom" secondItem="TL1-U4-icm" secondAttribute="bottom" id="nFi-6m-KIa"/>
                             <constraint firstItem="TL1-U4-icm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nNp-qF-g9t"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="uDE-4k-z3b"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Cooking Companion" id="wA8-Qv-rHx"/>
+                    <navigationItem key="navigationItem" title="Recipes" id="wA8-Qv-rHx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,10 +90,6 @@
         <scene sceneID="8TO-7D-cx0">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="XIm-Ul-QpL" customClass="RecipeDetailVC" customModule="cookingCompanion" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5h0-UZ-pBu"/>
-                        <viewControllerLayoutGuide type="bottom" id="THa-sg-Iaz"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EIx-cz-RMG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,7 +107,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gi9-y0-m64">
-                                                <rect key="frame" x="120.5" y="252" width="134" height="27.5"/>
+                                                <rect key="frame" x="122.5" y="252" width="130" height="27.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -148,7 +142,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Ingredient Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="e6f-tt-KtF">
-                                                                    <rect key="frame" x="16" y="7" width="247" height="19.5"/>
+                                                                    <rect key="frame" x="8" y="7" width="263" height="19.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -216,11 +210,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="THa-sg-Iaz" firstAttribute="top" secondItem="pZD-cB-7zS" secondAttribute="bottom" id="K0u-G2-XVX"/>
-                            <constraint firstItem="pZD-cB-7zS" firstAttribute="leading" secondItem="EIx-cz-RMG" secondAttribute="leading" id="a4l-Ax-J2E"/>
-                            <constraint firstAttribute="trailing" secondItem="pZD-cB-7zS" secondAttribute="trailing" id="cvS-8i-GLI"/>
+                            <constraint firstItem="kad-Oj-kfQ" firstAttribute="bottom" secondItem="pZD-cB-7zS" secondAttribute="bottom" id="K0u-G2-XVX"/>
+                            <constraint firstItem="pZD-cB-7zS" firstAttribute="leading" secondItem="kad-Oj-kfQ" secondAttribute="leading" id="a4l-Ax-J2E"/>
+                            <constraint firstItem="kad-Oj-kfQ" firstAttribute="trailing" secondItem="pZD-cB-7zS" secondAttribute="trailing" id="cvS-8i-GLI"/>
                             <constraint firstItem="pZD-cB-7zS" firstAttribute="top" secondItem="EIx-cz-RMG" secondAttribute="top" id="iCO-g6-T3O"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="kad-Oj-kfQ"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="800"/>
@@ -239,10 +234,6 @@
         <scene sceneID="4Cc-IK-02h">
             <objects>
                 <viewController id="Na6-5L-lyL" customClass="RecipeProcedureVC" customModule="cookingCompanion" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lP6-qX-D9q"/>
-                        <viewControllerLayoutGuide type="bottom" id="sgI-o6-05F"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Qb-Jg-0uJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -265,7 +256,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directions Header" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XE7-SW-t5K">
-                                                    <rect key="frame" x="40" y="48" width="295" height="29"/>
+                                                    <rect key="frame" x="32" y="40" width="311" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -277,7 +268,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.84999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="e7J-Iu-Eqb">
-                                                    <rect key="frame" x="32" y="117" width="311" height="24"/>
+                                                    <rect key="frame" x="24" y="109" width="327" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -343,17 +334,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="sHQ-G8-cdV" secondAttribute="trailing" constant="16" id="2o9-oQ-9Av"/>
+                            <constraint firstItem="1W2-bJ-CX2" firstAttribute="trailing" secondItem="sHQ-G8-cdV" secondAttribute="trailing" constant="16" id="2o9-oQ-9Av"/>
                             <constraint firstItem="qJ3-pa-1B0" firstAttribute="leading" secondItem="0Qb-Jg-0uJ" secondAttribute="leadingMargin" constant="16" id="HiX-MI-3Dg"/>
-                            <constraint firstAttribute="trailing" secondItem="tnm-Bn-xFS" secondAttribute="trailing" id="Olo-pn-H2J"/>
-                            <constraint firstItem="sgI-o6-05F" firstAttribute="top" secondItem="tnm-Bn-xFS" secondAttribute="bottom" id="QiU-MJ-5ei"/>
-                            <constraint firstItem="pSw-LP-ZK7" firstAttribute="top" secondItem="lP6-qX-D9q" secondAttribute="bottom" constant="16" id="SbN-ey-SeS"/>
-                            <constraint firstItem="qJ3-pa-1B0" firstAttribute="top" secondItem="lP6-qX-D9q" secondAttribute="bottom" constant="16" id="e7h-ew-kJ4"/>
+                            <constraint firstItem="1W2-bJ-CX2" firstAttribute="trailing" secondItem="tnm-Bn-xFS" secondAttribute="trailing" id="Olo-pn-H2J"/>
+                            <constraint firstItem="1W2-bJ-CX2" firstAttribute="bottom" secondItem="tnm-Bn-xFS" secondAttribute="bottom" id="QiU-MJ-5ei"/>
+                            <constraint firstItem="pSw-LP-ZK7" firstAttribute="top" secondItem="1W2-bJ-CX2" secondAttribute="top" constant="16" id="SbN-ey-SeS"/>
+                            <constraint firstItem="qJ3-pa-1B0" firstAttribute="top" secondItem="1W2-bJ-CX2" secondAttribute="top" constant="16" id="e7h-ew-kJ4"/>
                             <constraint firstItem="tnm-Bn-xFS" firstAttribute="top" secondItem="0Qb-Jg-0uJ" secondAttribute="top" id="fRV-ie-aic"/>
-                            <constraint firstItem="pSw-LP-ZK7" firstAttribute="centerX" secondItem="0Qb-Jg-0uJ" secondAttribute="centerX" id="fgt-mG-Ctg"/>
-                            <constraint firstItem="sHQ-G8-cdV" firstAttribute="top" secondItem="lP6-qX-D9q" secondAttribute="bottom" constant="16" id="g08-3Z-b3Z"/>
-                            <constraint firstItem="tnm-Bn-xFS" firstAttribute="leading" secondItem="0Qb-Jg-0uJ" secondAttribute="leading" id="mQf-mt-aGL"/>
+                            <constraint firstItem="pSw-LP-ZK7" firstAttribute="centerX" secondItem="1W2-bJ-CX2" secondAttribute="centerX" id="fgt-mG-Ctg"/>
+                            <constraint firstItem="sHQ-G8-cdV" firstAttribute="top" secondItem="1W2-bJ-CX2" secondAttribute="top" constant="16" id="g08-3Z-b3Z"/>
+                            <constraint firstItem="tnm-Bn-xFS" firstAttribute="leading" secondItem="1W2-bJ-CX2" secondAttribute="leading" id="mQf-mt-aGL"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="1W2-bJ-CX2"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="tnm-Bn-xFS" id="6sh-EU-PQS"/>
@@ -371,7 +363,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yha-0Q-8a2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="F6w-CZ-AvD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

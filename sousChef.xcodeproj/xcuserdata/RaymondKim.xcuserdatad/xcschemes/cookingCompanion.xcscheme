@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "94B287E41ED5300B00695407"
-               BuildableName = "cookingCompanion.app"
-               BlueprintName = "cookingCompanion"
-               ReferencedContainer = "container:cookingCompanion.xcodeproj">
+               BuildableName = "sousChef.app"
+               BlueprintName = "sousChef"
+               ReferencedContainer = "container:sousChef.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -33,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "94B287F81ED5300B00695407"
-               BuildableName = "cookingCompanionTests.xctest"
-               BlueprintName = "cookingCompanionTests"
-               ReferencedContainer = "container:cookingCompanion.xcodeproj">
+               BuildableName = "sousChefTests.xctest"
+               BlueprintName = "sousChefTests"
+               ReferencedContainer = "container:sousChef.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +44,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "94B288031ED5300B00695407"
-               BuildableName = "cookingCompanionUITests.xctest"
-               BlueprintName = "cookingCompanionUITests"
-               ReferencedContainer = "container:cookingCompanion.xcodeproj">
+               BuildableName = "sousChefUITests.xctest"
+               BlueprintName = "sousChefUITests"
+               ReferencedContainer = "container:sousChef.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +54,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "94B287E41ED5300B00695407"
-            BuildableName = "cookingCompanion.app"
-            BlueprintName = "cookingCompanion"
-            ReferencedContainer = "container:cookingCompanion.xcodeproj">
+            BuildableName = "sousChef.app"
+            BlueprintName = "sousChef"
+            ReferencedContainer = "container:sousChef.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,6 +66,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -76,9 +78,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "94B287E41ED5300B00695407"
-            BuildableName = "cookingCompanion.app"
-            BlueprintName = "cookingCompanion"
-            ReferencedContainer = "container:cookingCompanion.xcodeproj">
+            BuildableName = "sousChef.app"
+            BlueprintName = "sousChef"
+            ReferencedContainer = "container:sousChef.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +97,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "94B287E41ED5300B00695407"
-            BuildableName = "cookingCompanion.app"
-            BlueprintName = "cookingCompanion"
-            ReferencedContainer = "container:cookingCompanion.xcodeproj">
+            BuildableName = "sousChef.app"
+            BlueprintName = "sousChef"
+            ReferencedContainer = "container:sousChef.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

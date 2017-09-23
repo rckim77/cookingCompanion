@@ -16,8 +16,8 @@
 		94B287EE1ED5300B00695407 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B287EC1ED5300B00695407 /* Main.storyboard */; };
 		94B287F01ED5300B00695407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B287EF1ED5300B00695407 /* Assets.xcassets */; };
 		94B287F31ED5300B00695407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B287F11ED5300B00695407 /* LaunchScreen.storyboard */; };
-		94B287FE1ED5300B00695407 /* cookingCompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B287FD1ED5300B00695407 /* cookingCompanionTests.swift */; };
-		94B288091ED5300B00695407 /* cookingCompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B288081ED5300B00695407 /* cookingCompanionUITests.swift */; };
+		94B287FE1ED5300B00695407 /* sousChefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B287FD1ED5300B00695407 /* sousChefTests.swift */; };
+		94B288091ED5300B00695407 /* sousChefUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B288081ED5300B00695407 /* sousChefUITests.swift */; };
 		94B288171ED5469700695407 /* RecipeOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B288161ED5469700695407 /* RecipeOverviewVC.swift */; };
 		94B288191ED547E500695407 /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B288181ED547E500695407 /* RecipeDetailVC.swift */; };
 		94B2881B1ED548CC00695407 /* RecipeOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2881A1ED548CC00695407 /* RecipeOverviewCell.swift */; };
@@ -51,17 +51,17 @@
 		9479A9D31ED551B800AEDF47 /* IngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		9479A9D51ED5580E00AEDF47 /* RecipeProcedureStepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeProcedureStepCell.swift; sourceTree = "<group>"; };
 		9479A9D71ED55D0400AEDF47 /* String+ValidCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ValidCommands.swift"; sourceTree = "<group>"; };
-		94B287E51ED5300B00695407 /* cookingCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cookingCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94B287E51ED5300B00695407 /* sousChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sousChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B287E81ED5300B00695407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94B287ED1ED5300B00695407 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94B287EF1ED5300B00695407 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94B287F21ED5300B00695407 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94B287F41ED5300B00695407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		94B287F91ED5300B00695407 /* cookingCompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cookingCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94B287FD1ED5300B00695407 /* cookingCompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cookingCompanionTests.swift; sourceTree = "<group>"; };
+		94B287F91ED5300B00695407 /* sousChefTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sousChefTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94B287FD1ED5300B00695407 /* sousChefTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sousChefTests.swift; sourceTree = "<group>"; };
 		94B287FF1ED5300B00695407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		94B288041ED5300B00695407 /* cookingCompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cookingCompanionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94B288081ED5300B00695407 /* cookingCompanionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cookingCompanionUITests.swift; sourceTree = "<group>"; };
+		94B288041ED5300B00695407 /* sousChefUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sousChefUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94B288081ED5300B00695407 /* sousChefUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sousChefUITests.swift; sourceTree = "<group>"; };
 		94B2880A1ED5300B00695407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94B288161ED5469700695407 /* RecipeOverviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeOverviewVC.swift; sourceTree = "<group>"; };
 		94B288181ED547E500695407 /* RecipeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
@@ -107,9 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				94F6C9DB1EDE97D500420F16 /* OpenEarsHeader.h */,
-				94B287E71ED5300B00695407 /* cookingCompanion */,
-				94B287FC1ED5300B00695407 /* cookingCompanionTests */,
-				94B288071ED5300B00695407 /* cookingCompanionUITests */,
+				94B287E71ED5300B00695407 /* sousChef */,
+				94B287FC1ED5300B00695407 /* sousChefTests */,
+				94B288071ED5300B00695407 /* sousChefUITests */,
 				94B287E61ED5300B00695407 /* Products */,
 				94F6C9CF1EDE96FC00420F16 /* Framework */,
 				94F6C9D61EDE97A600420F16 /* Frameworks */,
@@ -119,14 +119,14 @@
 		94B287E61ED5300B00695407 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94B287E51ED5300B00695407 /* cookingCompanion.app */,
-				94B287F91ED5300B00695407 /* cookingCompanionTests.xctest */,
-				94B288041ED5300B00695407 /* cookingCompanionUITests.xctest */,
+				94B287E51ED5300B00695407 /* sousChef.app */,
+				94B287F91ED5300B00695407 /* sousChefTests.xctest */,
+				94B288041ED5300B00695407 /* sousChefUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		94B287E71ED5300B00695407 /* cookingCompanion */ = {
+		94B287E71ED5300B00695407 /* sousChef */ = {
 			isa = PBXGroup;
 			children = (
 				94B287EC1ED5300B00695407 /* Main.storyboard */,
@@ -143,25 +143,25 @@
 				94B287F11ED5300B00695407 /* LaunchScreen.storyboard */,
 				94B287F41ED5300B00695407 /* Info.plist */,
 			);
-			path = cookingCompanion;
+			path = sousChef;
 			sourceTree = "<group>";
 		};
-		94B287FC1ED5300B00695407 /* cookingCompanionTests */ = {
+		94B287FC1ED5300B00695407 /* sousChefTests */ = {
 			isa = PBXGroup;
 			children = (
-				94B287FD1ED5300B00695407 /* cookingCompanionTests.swift */,
+				94B287FD1ED5300B00695407 /* sousChefTests.swift */,
 				94B287FF1ED5300B00695407 /* Info.plist */,
 			);
-			path = cookingCompanionTests;
+			path = sousChefTests;
 			sourceTree = "<group>";
 		};
-		94B288071ED5300B00695407 /* cookingCompanionUITests */ = {
+		94B288071ED5300B00695407 /* sousChefUITests */ = {
 			isa = PBXGroup;
 			children = (
-				94B288081ED5300B00695407 /* cookingCompanionUITests.swift */,
+				94B288081ED5300B00695407 /* sousChefUITests.swift */,
 				94B2880A1ED5300B00695407 /* Info.plist */,
 			);
-			path = cookingCompanionUITests;
+			path = sousChefUITests;
 			sourceTree = "<group>";
 		};
 		94F6C9CF1EDE96FC00420F16 /* Framework */ = {
@@ -186,9 +186,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		94B287E41ED5300B00695407 /* cookingCompanion */ = {
+		94B287E41ED5300B00695407 /* sousChef */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94B2880D1ED5300B00695407 /* Build configuration list for PBXNativeTarget "cookingCompanion" */;
+			buildConfigurationList = 94B2880D1ED5300B00695407 /* Build configuration list for PBXNativeTarget "sousChef" */;
 			buildPhases = (
 				94B287E11ED5300B00695407 /* Sources */,
 				94B287E21ED5300B00695407 /* Frameworks */,
@@ -198,14 +198,14 @@
 			);
 			dependencies = (
 			);
-			name = cookingCompanion;
+			name = sousChef;
 			productName = cookingCompanion;
-			productReference = 94B287E51ED5300B00695407 /* cookingCompanion.app */;
+			productReference = 94B287E51ED5300B00695407 /* sousChef.app */;
 			productType = "com.apple.product-type.application";
 		};
-		94B287F81ED5300B00695407 /* cookingCompanionTests */ = {
+		94B287F81ED5300B00695407 /* sousChefTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94B288101ED5300B00695407 /* Build configuration list for PBXNativeTarget "cookingCompanionTests" */;
+			buildConfigurationList = 94B288101ED5300B00695407 /* Build configuration list for PBXNativeTarget "sousChefTests" */;
 			buildPhases = (
 				94B287F51ED5300B00695407 /* Sources */,
 				94B287F61ED5300B00695407 /* Frameworks */,
@@ -216,14 +216,14 @@
 			dependencies = (
 				94B287FB1ED5300B00695407 /* PBXTargetDependency */,
 			);
-			name = cookingCompanionTests;
+			name = sousChefTests;
 			productName = cookingCompanionTests;
-			productReference = 94B287F91ED5300B00695407 /* cookingCompanionTests.xctest */;
+			productReference = 94B287F91ED5300B00695407 /* sousChefTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		94B288031ED5300B00695407 /* cookingCompanionUITests */ = {
+		94B288031ED5300B00695407 /* sousChefUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94B288131ED5300B00695407 /* Build configuration list for PBXNativeTarget "cookingCompanionUITests" */;
+			buildConfigurationList = 94B288131ED5300B00695407 /* Build configuration list for PBXNativeTarget "sousChefUITests" */;
 			buildPhases = (
 				94B288001ED5300B00695407 /* Sources */,
 				94B288011ED5300B00695407 /* Frameworks */,
@@ -234,9 +234,9 @@
 			dependencies = (
 				94B288061ED5300B00695407 /* PBXTargetDependency */,
 			);
-			name = cookingCompanionUITests;
+			name = sousChefUITests;
 			productName = cookingCompanionUITests;
-			productReference = 94B288041ED5300B00695407 /* cookingCompanionUITests.xctest */;
+			productReference = 94B288041ED5300B00695407 /* sousChefUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -266,7 +266,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 94B287E01ED5300B00695407 /* Build configuration list for PBXProject "cookingCompanion" */;
+			buildConfigurationList = 94B287E01ED5300B00695407 /* Build configuration list for PBXProject "sousChef" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -279,9 +279,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				94B287E41ED5300B00695407 /* cookingCompanion */,
-				94B287F81ED5300B00695407 /* cookingCompanionTests */,
-				94B288031ED5300B00695407 /* cookingCompanionUITests */,
+				94B287E41ED5300B00695407 /* sousChef */,
+				94B287F81ED5300B00695407 /* sousChefTests */,
+				94B288031ED5300B00695407 /* sousChefUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -335,7 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B287FE1ED5300B00695407 /* cookingCompanionTests.swift in Sources */,
+				94B287FE1ED5300B00695407 /* sousChefTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B288091ED5300B00695407 /* cookingCompanionUITests.swift in Sources */,
+				94B288091ED5300B00695407 /* sousChefUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,12 +352,12 @@
 /* Begin PBXTargetDependency section */
 		94B287FB1ED5300B00695407 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 94B287E41ED5300B00695407 /* cookingCompanion */;
+			target = 94B287E41ED5300B00695407 /* sousChef */;
 			targetProxy = 94B287FA1ED5300B00695407 /* PBXContainerItemProxy */;
 		};
 		94B288061ED5300B00695407 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 94B287E41ED5300B00695407 /* cookingCompanion */;
+			target = 94B287E41ED5300B00695407 /* sousChef */;
 			targetProxy = 94B288051ED5300B00695407 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -525,7 +525,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.cookingCompanionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cookingCompanion.app/cookingCompanion";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sousChef.app/sousChef";
 			};
 			name = Debug;
 		};
@@ -539,7 +539,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.cookingCompanionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cookingCompanion.app/cookingCompanion";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sousChef.app/sousChef";
 			};
 			name = Release;
 		};
@@ -572,7 +572,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		94B287E01ED5300B00695407 /* Build configuration list for PBXProject "cookingCompanion" */ = {
+		94B287E01ED5300B00695407 /* Build configuration list for PBXProject "sousChef" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94B2880B1ED5300B00695407 /* Debug */,
@@ -581,7 +581,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94B2880D1ED5300B00695407 /* Build configuration list for PBXNativeTarget "cookingCompanion" */ = {
+		94B2880D1ED5300B00695407 /* Build configuration list for PBXNativeTarget "sousChef" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94B2880E1ED5300B00695407 /* Debug */,
@@ -590,7 +590,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94B288101ED5300B00695407 /* Build configuration list for PBXNativeTarget "cookingCompanionTests" */ = {
+		94B288101ED5300B00695407 /* Build configuration list for PBXNativeTarget "sousChefTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94B288111ED5300B00695407 /* Debug */,
@@ -599,7 +599,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94B288131ED5300B00695407 /* Build configuration list for PBXNativeTarget "cookingCompanionUITests" */ = {
+		94B288131ED5300B00695407 /* Build configuration list for PBXNativeTarget "sousChefUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94B288141ED5300B00695407 /* Debug */,

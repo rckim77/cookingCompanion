@@ -1,6 +1,6 @@
 //
 //  OpenEarsHeader.h
-//  cookingCompanion
+//  sousChef
 //
 //  Created by Raymond Kim on 5/30/17.
 //  Copyright © 2017 Raymond Kim. All rights reserved.

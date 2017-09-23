@@ -1,6 +1,6 @@
 //
-//  cookingCompanionUITests.swift
-//  cookingCompanionUITests
+//  sousChefUITests.swift
+//  sousChefUITests
 //
 //  Created by Raymond Kim on 5/23/17.
 //  Copyright © 2017 Raymond Kim. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class cookingCompanionUITests: XCTestCase {
+class sousChefUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

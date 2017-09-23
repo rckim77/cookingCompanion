@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7E2F73B9C6181CA5678EAAA57C78A87EBF82A96E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7E2F73B9C6181CA5678EAAA57C78A87EBF82A96E" : 9223372036854775807,
+    "5B4BCFAC7BCA2DF5B60B65D2F1186C79B35A78B3" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "28B6AFF7-9659-4D39-B5E0-BE5A7C466B43",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7E2F73B9C6181CA5678EAAA57C78A87EBF82A96E" : "cookingCompanion\/",
+    "5B4BCFAC7BCA2DF5B60B65D2F1186C79B35A78B3" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "cookingCompanion",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "cookingCompanion.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rckim77\/cookingCompanion.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5B4BCFAC7BCA2DF5B60B65D2F1186C79B35A78B3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rckim77\/cookingCompanion.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7E2F73B9C6181CA5678EAAA57C78A87EBF82A96E"
+    }
+  ]
+}

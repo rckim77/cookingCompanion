@@ -1,6 +1,6 @@
 //
 //  EnglishLanguageModel.swift
-//  cookingCompanion
+//  sousChef
 //
 //  Created by Raymond Kim on 6/16/17.
 //  Copyright © 2017 Raymond Kim. All rights reserved.
